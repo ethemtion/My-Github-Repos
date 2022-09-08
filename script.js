@@ -13,11 +13,15 @@ async function getPP() {
   $("#avatar").attr("src", avatar);
 }
 
-let repoName, repoUrl, repoLastUpdated;
+let repoName, repoUrl, repoLastUpdated, repoDesc;
 let day,month,year;
 async function getData() {
   const response = await fetch(url);
   const data = await response.json();
+
+
+console.log(data)
+
 
   data.reverse().forEach((repo) => {
     repoName = repo.name;
@@ -27,6 +31,7 @@ async function getData() {
     day = date.getDate()
     month = date.getMonth()
     year = date.getFullYear()
+    repoDesc = repo.description;
   });
 
  
@@ -35,13 +40,10 @@ async function getData() {
   $("#profile-tab").html(repoName);
   $("#profile-tab-pane").html(`
   <div class="tabContent text-center">
-                <p class="pt-3 text-end">Last updated: ${day}.${month}.${year}</p>
+                <p class="pt-3 text-end">Last updated: ${day}.${month + 1}.${year}</p>
                 <a href="${repoUrl}" class="btn btn-primary m-2 w-25 text-wrap mx-auto" target="_blank">${repoName} Github </a>
                   <p class="pt-3">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus aliquam, inventore sint suscipit officia odit
-                    ad, non dolore voluptate facere repellat sapiente id,
-                    accusantium illo ipsam praesentium distinctio et dolorem.
+                    ${repoDesc}
                   </p>
 
                 </div>
