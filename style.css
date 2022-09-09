@@ -51,3 +51,9 @@ width: 15%;
     background-color:  rgb(31, 7, 7);
     
 }
+
+.nav-link{
+  
+  text-decoration-color: white;
+  color: rgb(239, 163, 163);
+}

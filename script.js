@@ -55,7 +55,7 @@ function makeTab() {
   let html = `<li class="nav-item`;
   if (++counter == 0) html += ` ms-5`;
   html += `" role="presentation"><button
-  class="nav-link id="${repoName}-tab" data-bs-toggle="tab" data-bs-target="#${repoName}-tab-pane" type="button" role="tab" aria-controls="${repoName}-tab-pane" aria-selected="false">${repoName}</button></li>`;
+  class="nav-link" id="${repoName}-tab" data-bs-toggle="tab" data-bs-target="#${repoName}-tab-pane" type="button" role="tab" aria-controls="${repoName}-tab-pane" aria-selected="false">${repoName}</button></li>`;
 
   $(".nav").append(html);
 }
